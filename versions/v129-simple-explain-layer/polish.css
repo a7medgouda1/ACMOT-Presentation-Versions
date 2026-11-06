@@ -1,0 +1,35 @@
+/* v125: calm, high-contrast visual system for the two paper stories. */
+:root{
+  --bg:#E7ECF3;
+  --ink:#142238;
+  --ink2:#33455B;
+  --line:#E0E8F0;
+  --shadow:0 15px 36px -18px rgba(19,36,61,.22),0 2px 7px -3px rgba(19,36,61,.07)
+}
+.slide[data-sec="11"]{--sec:#4D49B4;--sec-t:#F0EFFF}
+.slide[data-sec="12"]{--sec:#087F79;--sec-t:#E9F8F5}
+.slide[data-sec="11"],.slide[data-sec="12"]{
+  background:radial-gradient(circle at 97% 0%,rgba(221,229,249,.48),transparent 27%),
+             linear-gradient(180deg,#fff 0%,#fff 74%,#F8FAFD 100%)
+}
+.slide[data-sec="12"]{background:radial-gradient(circle at 97% 0%,rgba(206,238,231,.52),transparent 27%),linear-gradient(180deg,#fff 0%,#fff 74%,#F8FAFC 100%)}
+.slide[data-sec="11"] .s-head h2,.slide[data-sec="12"] .s-head h2{letter-spacing:-.025em;line-height:1.1}
+.slide[data-sec="11"] .kicker,.slide[data-sec="12"] .kicker{font-size:19px;letter-spacing:.11em}
+.slide[data-sec="11"] .s-head::after,.slide[data-sec="12"] .s-head::after{width:74px;height:4px;opacity:.8}
+.slide[data-sec="11"] .card,.slide[data-sec="12"] .card{border-color:#E1E9F1;box-shadow:0 12px 28px -17px rgba(24,43,70,.2),0 2px 7px -4px rgba(24,43,70,.1)}
+.slide[data-sec="11"] .meaning,.slide[data-sec="12"] .meaning{border-left-width:7px;border-radius:16px;box-shadow:0 7px 21px -16px rgba(24,43,70,.26)}
+.beginner-slide .s-body{gap:14px}
+.beginner-slide .beginner-frame{height:480px;flex-basis:480px;position:relative;border:1px solid #D8E2EC;background:#fff;box-shadow:0 16px 36px -24px rgba(19,36,61,.3)}
+.diagram-slide .diagram-frame{border:1px solid #D8E2EC;background:#fff;box-shadow:0 16px 36px -24px rgba(19,36,61,.3)}
+.beginner-notes>div,.diagram-note>div{background:#F5F4FF;border-left-width:5px;border-radius:13px;box-shadow:inset 0 0 0 1px rgba(77,73,180,.07)}
+.beginner-slide[data-sec="12"] .beginner-notes>div,.diagram-slide[data-sec="12"] .diagram-note>div{background:#EFFAF8;box-shadow:inset 0 0 0 1px rgba(8,127,121,.08)}
+.beginner-notes strong,.diagram-note strong{color:#35445B;letter-spacing:.08em}
+.beginner-svg.zoomable,.diagram-frame.zoomable,.beginner-photos .zoomable{cursor:zoom-in}
+.beginner-svg.zoomable:focus-visible,.diagram-frame.zoomable:focus-visible,.beginner-photos figure:focus-visible,.lab-open:focus-visible{outline:4px solid #F1AB3A;outline-offset:3px}
+.lab-open{position:absolute;right:23px;bottom:20px;border:1px solid #BFC5EB;border-radius:999px;background:#fff;color:#37318C;padding:11px 19px;font-size:18px;font-weight:800;line-height:1.1;box-shadow:0 8px 24px rgba(19,36,61,.17);cursor:pointer;transition:background .18s,transform .18s}
+.lab-open:hover{background:#F1F0FE;transform:translateY(-2px)}
+.beginner-slide[data-sec="12"] .lab-open{border-color:#9FDCD5;color:#076A64}
+.beginner-slide[data-sec="12"] .lab-open:hover{background:#EAF8F5}
+.beginner-source,.diagram-source{color:#65758B;font-weight:650}
+@media (prefers-reduced-motion:reduce){.lab-open{transition:none}}
+@media print{.beginner-notes .frag,.diagram-svg .diagram-build.frag{opacity:1!important;visibility:visible!important;stroke-dashoffset:0!important}}

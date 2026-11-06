@@ -1,0 +1,54 @@
+/* Automatic builds for beginner and paper-accurate diagrams. */
+.beginner-svg.zoomable,.diagram-frame.zoomable,.beginner-photos .zoomable{cursor:zoom-in}
+.beginner-photos figure:focus-visible,.beginner-svg.zoomable:focus-visible,.diagram-frame.zoomable:focus-visible,.lab-open:focus-visible{outline:4px solid #F59E0B;outline-offset:3px}
+.beginner-slide .beginner-notes .frag:not(.on){visibility:hidden;pointer-events:none}
+.beginner-slide.active .beginner-frame{animation:figure-enter .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes figure-enter{from{opacity:.4;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.diagram-svg .diagram-build.frag{transform:none;pointer-events:none}
+.diagram-svg .diagram-build.frag.on{pointer-events:auto}
+.diagram-svg .diagram-node.frag.on{animation:diagram-node-in .48s cubic-bezier(.2,.8,.2,1) both}
+@keyframes diagram-node-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.diagram-svg .edge.diagram-build.frag:not(.feedback){stroke-dasharray:2000;stroke-dashoffset:2000}
+.diagram-svg .edge.diagram-build.frag.on:not(.feedback){animation:diagram-edge-draw .7s ease forwards}
+@keyframes diagram-edge-draw{to{stroke-dashoffset:0}}
+.diagram-slide.active .diagram-chart line:not(.axis){animation:chart-connector .75s ease both;transform-box:fill-box;transform-origin:left center}
+.diagram-slide.active .diagram-chart circle{animation:chart-mark .5s ease .35s both}
+@keyframes chart-connector{from{opacity:.2;transform:scaleX(.05)}to{opacity:1;transform:none}}
+@keyframes chart-mark{from{opacity:0;transform:scale(.5);transform-box:fill-box;transform-origin:center}to{opacity:1;transform:none}}
+
+/* Small, clearly marked teaching simulations; never a claim of a new experiment. */
+.interactive-lab.open{display:grid;place-items:center}
+.lab-panel{position:relative;width:min(760px,92vw);max-height:90vh;overflow:auto;background:#fff;border-radius:22px;padding:32px 38px 34px;box-shadow:0 28px 75px rgba(15,27,51,.30);color:#0F1B33}
+.lab-close{position:absolute;right:18px;top:15px;border:0;background:transparent;color:#475569;font-size:34px;line-height:1;cursor:pointer;width:44px;height:44px}
+.lab-kicker{text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:#0D9488;font-size:14px}
+.lab-panel h2{font-size:30px;line-height:1.14;margin:9px 44px 8px 0}
+.lab-intro{font-size:19px;line-height:1.35;color:#334155;margin:0 0 23px}
+.lab-fields{display:grid;gap:19px}
+.lab-field{display:grid;gap:7px;font-weight:750;font-size:18px}
+.lab-field-head{display:flex;justify-content:space-between;gap:15px}
+.lab-field output{font-variant-numeric:tabular-nums;color:#0F766E;font-weight:850}
+.lab-field input[type="range"]{width:100%;accent-color:#0D9488;cursor:pointer}
+.lab-field select{font:inherit;border:2px solid #CBD5E1;border-radius:10px;padding:8px 12px;background:#fff;color:#0F1B33}
+.lab-check{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:800}
+.lab-check input{width:23px;height:23px;accent-color:#0D9488}
+.lab-scale{position:relative;height:54px;margin:26px 9px 19px;border-radius:12px;background:linear-gradient(90deg,#E0E7FF 0%,#E0E7FF 29.7%,#CCFBF1 29.7%,#CCFBF1 51.1%,#DCFCE7 51.1%,#DCFCE7 100%)}
+.lab-scale.mode-scale{background:linear-gradient(90deg,#FEE2E2 0%,#FEE2E2 50%,#DCFCE7 50%,#DCFCE7 100%)}
+.lab-scale.gate-scale{background:linear-gradient(90deg,#FEE2E2 0%,#FEE2E2 70%,#DCFCE7 70%,#DCFCE7 100%)}
+.lab-scale.remap-scale{background:linear-gradient(90deg,#E2E8F0 0%,#E2E8F0 10%,#FDE68A 10%,#FDE68A 50%,#A7F3D0 50%,#A7F3D0 100%)}
+.lab-scale.cold,.lab-field input:disabled{opacity:.42}
+.lab-marker{position:absolute;top:-9px;bottom:-9px;width:5px;border-radius:3px;background:#0F1B33;left:var(--marker,50%);transition:left .22s ease}
+.lab-marker::after{content:"";position:absolute;left:-7px;top:-8px;width:19px;height:19px;border-radius:50%;background:#0F1B33}
+.lab-scale-labels{display:flex;justify-content:space-between;font-size:14px;font-weight:800;color:#475569}
+.lab-result{margin-top:24px;padding:18px 20px;border-radius:15px;background:#F0FDF4;border-left:7px solid #15803D;font-size:23px;line-height:1.25;font-weight:850}
+.lab-result.warn{background:#FFFBEB;border-left-color:#D97706}
+.lab-detail{font-size:17px;color:#334155;font-weight:600;margin-top:7px}
+.lab-source{font-size:14px;line-height:1.35;color:#52637B;margin-top:20px;font-weight:650}
+@media (max-width:650px){.lab-panel{padding:25px 22px}.lab-panel h2{font-size:25px}.lab-intro{font-size:17px}.lab-result{font-size:20px}}
+@media (prefers-reduced-motion:reduce){
+  .beginner-slide.active .beginner-frame,
+  .diagram-svg .diagram-node.frag.on,.diagram-svg .edge.diagram-build.frag.on:not(.feedback),
+  .diagram-slide.active .diagram-chart line:not(.axis),.diagram-slide.active .diagram-chart circle{animation:none!important}
+  .lab-marker,.lab-open{transition:none!important}
+  .diagram-svg .edge.diagram-build.frag.on:not(.feedback){stroke-dashoffset:0}
+}
+@media print{.beginner-notes .frag,.diagram-svg .diagram-build.frag{opacity:1!important;visibility:visible!important;stroke-dashoffset:0!important}}

@@ -1,0 +1,10 @@
+.result-bars-body{display:flex;flex-direction:column;gap:9px}
+.result-bar-intro{flex:0 0 auto;margin:0;padding:9px 16px;border-left:6px solid #4F46E5;border-radius:10px;background:#F3F2FF;color:#1E2C45;font-size:26px;font-weight:650;line-height:1.23}
+.result-bar-slide[data-sec="12"] .result-bar-intro{border-left-color:#0D9488;background:#EEFAF7}
+.result-bar-frame{flex:1 1 auto;min-height:0;border:1px solid #DDE5EE;border-radius:16px;overflow:hidden;background:white;box-shadow:0 15px 32px -25px rgba(20,36,61,.4)}
+.result-chart-image{display:block;width:100%;height:100%;object-fit:contain;cursor:zoom-in}
+.result-bar-note{flex:0 0 auto;margin:0;padding:7px 15px;border-radius:10px;background:#F8FAFC;color:#475569;font-size:20px;line-height:1.24}
+.result-bar-note b{color:#26364F}
+.result-bar-note small{display:block;margin-top:3px;font-size:15px;color:#64748B}
+body.mode-static .result-chart-image{cursor:default}
+@media print{.result-chart-image{max-height:550px}}

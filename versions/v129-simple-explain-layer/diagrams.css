@@ -1,0 +1,25 @@
+.diagram-slide .s-head h2{font-size:47px}
+.diagram-slide .s-body{display:flex;flex-direction:column;gap:16px}
+.diagram-frame{height:510px;flex:0 0 510px;border:2px solid #CBD5E1;border-radius:24px;background:linear-gradient(180deg,#F8FAFC,#FFF);padding:12px;overflow:hidden}
+.diagram-svg{width:100%;height:100%;display:block}
+.diagram-note{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-height:105px}
+.diagram-note>div{border-radius:16px;padding:12px 18px;font-size:22px;line-height:1.22;background:#EEF2FF;border-left:7px solid #4F46E5}
+.diagram-slide[data-sec="12"] .diagram-note>div{background:#E7F8F5;border-left-color:#0D9488}
+.diagram-note strong{display:block;font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.diagram-source{position:absolute;right:62px;bottom:40px;font-size:16px;color:#64748B;font-weight:700}
+.diagram-svg .edge{fill:none;stroke:#64748B;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.diagram-svg .edge.feedback{stroke-dasharray:10 8;stroke:#0D9488}
+.diagram-svg .edge-label{font:800 20px Inter,Arial,sans-serif;fill:#334155;paint-order:stroke;stroke:#F8FAFC;stroke-width:7px;stroke-linejoin:round}
+.diagram-svg .node-label{font:800 22px Inter,Arial,sans-serif;fill:#0F1B33}
+.diagram-svg .node-label.small{font-size:19px}
+.diagram-svg .shape.input{fill:#DBEAFE;stroke:#2563EB}
+.diagram-svg .shape.process{fill:#FFF;stroke:#4F46E5}
+.diagram-svg .shape.decision{fill:#FEF3C7;stroke:#D97706}
+.diagram-svg .shape.output{fill:#DCFCE7;stroke:#15803D}
+.diagram-svg .shape.memory{fill:#E2E8F0;stroke:#64748B}
+.diagram-svg .shape.warning{fill:#FEE2E2;stroke:#B91C1C}
+.diagram-svg .shape{stroke-width:4}
+.diagram-svg .axis{stroke:#64748B;stroke-width:3}
+.diagram-svg .axis-label{font:700 18px Inter,Arial,sans-serif;fill:#475569}
+.diagram-svg .point-label{font:800 23px Inter,Arial,sans-serif;fill:#0F1B33}
+.diagram-svg .chart-title{font:800 25px Inter,Arial,sans-serif;fill:#0F1B33}

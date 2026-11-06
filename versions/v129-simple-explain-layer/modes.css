@@ -1,0 +1,42 @@
+/* v126: prominent title-slide choice and two presentation behaviors. */
+.mode-choice{position:absolute;z-index:5;left:84px;bottom:36px;width:760px;color:#14243d}
+.mode-choice-label{font-size:19px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:#46418d;margin-bottom:10px}
+.mode-choice-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mode-option{display:flex;align-items:center;gap:12px;width:100%;min-height:91px;text-align:left;border:2px solid #cbd5e1;border-radius:17px;padding:11px 14px;background:#fff;color:#14243d;box-shadow:0 8px 22px rgba(23,36,61,.1);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.mode-option:hover{transform:translateY(-2px);box-shadow:0 13px 26px rgba(23,36,61,.16)}
+.mode-option:focus-visible{outline:4px solid #f59e0b;outline-offset:3px}
+.mode-option[aria-pressed="true"]{border-color:#4f46e5;background:#f7f6ff}
+.mode-option-live{border-color:#8780dc}
+.mode-option-icon{display:grid;flex:0 0 43px;place-items:center;width:43px;height:43px;border-radius:12px;background:#eef2ff;color:#4840ac;font-size:25px;font-weight:900}
+.mode-option-still .mode-option-icon{background:#edf6f5;color:#087f79}
+.mode-option strong{display:block;font-size:23px;line-height:1.1}
+.mode-option small{display:block;margin-top:5px;font-size:15px;line-height:1.24;color:#52637b;font-weight:650}
+.mode-choice-hint{margin-top:9px;font-size:15px;line-height:1.2;color:#607087;font-weight:650}
+
+/* Interactive builds stay automatic, but are visible as soon as the slide opens. */
+body.mode-interactive .slide{transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
+body.mode-interactive .slide.active{transition:opacity .18s ease,transform .18s ease}
+body.mode-interactive .frag{transition:opacity .16s ease,transform .16s ease}
+body.mode-interactive .beginner-slide.active .beginner-frame{animation-duration:.18s}
+body.mode-interactive .diagram-svg .diagram-node.frag.on{animation-duration:.16s}
+body.mode-interactive .diagram-svg .edge.diagram-build.frag.on:not(.feedback){animation-duration:.22s}
+body.mode-interactive .diagram-slide.active .diagram-chart line:not(.axis){animation-duration:.24s}
+body.mode-interactive .diagram-slide.active .diagram-chart circle{animation-duration:.18s;animation-delay:.08s}
+body.mode-interactive .bar,body.mode-interactive .hbar{transition-duration:.24s}
+body.mode-interactive .cline{transition-duration:.32s}
+body.mode-interactive .cval,body.mode-interactive .cdot,body.mode-interactive .cpt,body.mode-interactive .cann{transition-duration:.18s;transition-delay:.12s}
+
+/* Still view removes motion and optional click-to-explore activities. Navigation remains usable. */
+body.mode-static *,body.mode-static *::before,body.mode-static *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.mode-static .frag{opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto}
+body.mode-static .diagram-svg .edge.diagram-build.frag{stroke-dashoffset:0!important}
+body.mode-static .diagram-slide .diagram-chart line:not(.axis),body.mode-static .diagram-slide .diagram-chart circle{opacity:1!important;transform:none!important}
+body.mode-static .chart .bar,body.mode-static .chart .hbar{transform:none!important}
+body.mode-static .chart .cline{stroke-dashoffset:0!important}
+body.mode-static .chart .cval,body.mode-static .chart .cdot,body.mode-static .chart .cpt,body.mode-static .chart .cann{opacity:1!important}
+body.mode-static .lab-open,body.mode-static .s-foot .xbtn,body.mode-static .s-foot .ex-btn,body.mode-static .tabs button,body.mode-static [data-tabs] button{display:none!important}
+body.mode-static .zoomable,body.mode-static [data-def],body.mode-static [data-tip]{cursor:default!important}
+body.mode-static .mode-option:hover{transform:none}
+body.mode-static .tip{display:none!important}
+
+@media print{.mode-choice{display:none!important}}
